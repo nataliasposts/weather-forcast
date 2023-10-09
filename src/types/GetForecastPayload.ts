@@ -1,5 +1,5 @@
-export type GetForecastPayload = {
+export interface GetForecastPayload {
   lat: string;
   lon: string;
   city?: string;
-};
+}

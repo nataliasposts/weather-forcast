@@ -2,7 +2,7 @@ import GeneralIcon from 'src/shared/GeneralIcon/GeneralIcon';
 
 type WeatherDetailItemProps = {
   title: string;
-  value: string | number;
+  value: string;
   icon: string;
 };
 
