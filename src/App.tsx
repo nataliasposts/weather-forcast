@@ -12,10 +12,9 @@ const App: React.FC = () => {
     <StrictMode>
       <BrowserRouter>
         <Provider store={store}>
-          <MainLayout>
-            <RootRouter />
-            <ToastContainer />
-          </MainLayout>
+          <MainLayout />
+          <RootRouter />
+          <ToastContainer />
         </Provider>
       </BrowserRouter>
     </StrictMode>

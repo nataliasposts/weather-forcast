@@ -1,15 +1,12 @@
-import { ChangeEvent, ReactNode, useCallback, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import MainLayoutWrapper from './MainLayoutWrapper';
 import Header from 'src/components/Header/Header';
 import { useThunkAppDispatch } from 'src/store/redux-hooks/hooks';
 import { fetchWeatherToday } from 'src/store/actions/fetchWeatherToday';
 import { fetchWeatherWeek } from 'src/store/actions/fetchWeatherWeek';
+import MainPage from 'src/pages/MainPage/MainPage';
 
-type MainLayoutProps = {
-  children: ReactNode;
-};
-
-const MainLayout: React.FC<MainLayoutProps> = ({ children }: MainLayoutProps) => {
+const MainLayout: React.FC = () => {
   const [city, setCity] = useState<string>('Warsaw');
   const dispatch = useThunkAppDispatch();
 
@@ -40,7 +37,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }: MainLayoutProps) =>
   return (
     <MainLayoutWrapper>
       <Header onChange={handleSearch} value={city ?? ''} onClick={handleFetchClick} />
-      {children}
+      <MainPage />
     </MainLayoutWrapper>
   );
 };
