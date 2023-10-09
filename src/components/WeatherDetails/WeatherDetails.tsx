@@ -25,7 +25,7 @@ const WeatherDetails: React.FC<WeatherDeatilsProps> = ({ details }: WeatherDeati
   if (!details) {
     return null;
   }
-  return details ? (
+  return (
     <StyledWeatherDetails>
       <div className="weather-name">
         <div>
@@ -89,7 +89,7 @@ const WeatherDetails: React.FC<WeatherDeatilsProps> = ({ details }: WeatherDeati
         </div>
       </div>
     </StyledWeatherDetails>
-  ) : null;
+  );
 };
 
 export default WeatherDetails;
