@@ -31,9 +31,9 @@ const weatherTodaySlice = createSlice({
       state.error = null;
       state.loading = false;
     });
-    builder.addCase(fetchWeatherToday.rejected, (state, action) => {
+    builder.addCase(fetchWeatherToday.rejected, (state) => {
       state.loading = false;
-      state.error = action.error.message ? action.error.message : null;
+      state.error = 'error';
     });
   }
 });

@@ -36,6 +36,7 @@ const weatherWeekSlice = createSlice({
     });
     builder.addCase(fetchWeatherWeek.rejected, (state) => {
       state.loading = false;
+      state.error = 'error';
     });
   }
 });

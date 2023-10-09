@@ -3,10 +3,14 @@ import GeneralIcon from 'src/shared/GeneralIcon/GeneralIcon';
 type WeatherDetailItemProps = {
   title: string;
   value: string | number;
-  icon: any;
+  icon: string;
 };
 
-const WeatherDetailItem: React.FC<WeatherDetailItemProps> = ({ title, value, icon }) => (
+const WeatherDetailItem: React.FC<WeatherDetailItemProps> = ({
+  title,
+  value,
+  icon
+}: WeatherDetailItemProps) => (
   <div className="weather-details">
     <p className="text-enum">{title}</p>
     <div className="weather-sun-row">

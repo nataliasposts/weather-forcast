@@ -29,6 +29,8 @@ const StyledWeatherWeekDetails = styled.div`
 
   .icon {
     align-self: center;
+    width: 50px;
+    height: 50px;
   }
 
   .text {

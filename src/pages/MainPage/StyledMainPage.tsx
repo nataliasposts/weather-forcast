@@ -10,17 +10,7 @@ const StyledMainPage = styled.div`
     margin: auto;
     padding: 0 15px;
   }
-
-  .error-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .error-icon {
-      align-self: center;
-    }
-
-    .error-text {
+  .error-text {
       text-align: center;
       color: white;
     }

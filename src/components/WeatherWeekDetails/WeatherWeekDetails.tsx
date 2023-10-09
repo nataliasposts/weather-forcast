@@ -1,9 +1,9 @@
 import React from 'react';
-import moment from 'moment';
 import { ListForecastDto } from 'src/types/ListForecastDto';
 import StyledWeatherWeekDetails from './StyledWeatherWeekDetails';
 import GeneralIcon from 'src/shared/GeneralIcon/GeneralIcon';
 import { weatherIcon } from 'src/shared/weatherIcon';
+import { formatTimestampToShortDate, formatTimestateToHour } from '../helpers/date';
 
 type WeatherWeekDetailsProps = {
   details: ListForecastDto[] | null;
@@ -35,22 +35,11 @@ const WeatherWeekDetails: React.FC<WeatherWeekDetailsProps> = ({ details }) => {
       <div className="weather-week-wrapper">
         {showWeatherFiveDays(details).map((w) => (
           <div className="weather-week-details" key={w.dt}>
-            <p className="week-details-text">
-              {moment(w?.dt * 1000)
-                .subtract(3, 'hours')
-                .format('dddd')}
-            </p>
-            <p className="week-details-text">
-              {moment(w?.dt * 1000)
-                .subtract(3, 'hours')
-                .format('MMM DD')}
-            </p>
-            <GeneralIcon
-              src={weatherIcon(w.weather[0].icon)}
-              width="50px"
-              height="50px"
-              className="icon"
-            />
+            <p className="week-details-text">{formatTimestateToHour(w?.dt)}</p>
+            <p className="week-details-text">{formatTimestampToShortDate(w?.dt)}</p>
+            {w.weather && w.weather.length > 0 && (
+              <GeneralIcon src={weatherIcon(w?.weather[0].icon)} className="icon" />
+            )}
             <p className="week-details-text text">
               {Math.round(w?.main?.temp)}
               <sup>o</sup>C

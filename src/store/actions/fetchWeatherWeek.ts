@@ -11,7 +11,7 @@ export const fetchWeatherWeek = createAsyncThunk(
       );
       return response.data.list;
     } catch (error) {
-      return console.error('error in fetch wether today');
+      return console.error('error in fetch weather week');
     }
   }
 );
